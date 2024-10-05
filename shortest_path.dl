@@ -18,12 +18,12 @@ edge(b,d,4).
 % F -> From
 % T -> To
 % P -> path distance
-path(F,T,P) :- path(F,Z,P), edge(Z,T,Z).
 path(F,T,P) :- edge(F,T,P).
+path(F,T,P) :- edge(F,Z,A), edge(Z,T,B), P is A+B.
 
-:-solve(path(a,b,X)).
-:-solve(path(b,c,X)).
-:-solve(path(c,e,X)).
-:-solve(path(d,c,X)).
-:-solve(path(e,d,X)).
-:-solve(path(b,d,X)).
+% :-solve(path(a,b,X)).
+% :-solve(path(b,c,X)).
+% :-solve(path(c,e,X)).
+% :-solve(path(d,c,X)).
+% :-solve(path(e,d,X)).
+% :-solve(path(b,d,X)).
