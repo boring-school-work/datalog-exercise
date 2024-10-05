@@ -21,10 +21,16 @@ edge(b,d,4).
 path(F,T,P) :- edge(F,T,P).
 path(F,T,P) :-
   edge(F,Z,A),
+  edge(Z,T,B),
+  P is A+B.
+path(F,T,P) :-
+  edge(F,Z,A),
   edge(Z,Y,B),
   edge(Y,T,C),
   P is A+B+C.
 
+spath(F,T,P) :-
+  min(path(F,T,C), C, P).
 
 % :-solve(path(a,b,X)).
 % :-solve(path(b,c,X)).
