@@ -1,0 +1,29 @@
+% Program: Finding the shortest path from one point to another
+% Author : group 2
+% Members:
+%   David Saah Abeiku
+%   Akwesi Ntim Duodu
+%   Edward Ofosu Mensah
+%   Patience Nyonglema Sombang
+% Date   : October 7, 2024
+
+% defining edges
+edge(a,b,3).
+edge(b,c,2).
+edge(c,e,5).
+edge(d,c,5).
+edge(e,d,2).
+edge(b,d,4).
+
+% F -> From
+% T -> To
+% P -> path distance
+path(F,T,P) :- path(F,Z,P), edge(Z,T,Z).
+path(F,T,P) :- edge(F,T,P).
+
+:-solve(path(a,b,X)).
+:-solve(path(b,c,X)).
+:-solve(path(c,e,X)).
+:-solve(path(d,c,X)).
+:-solve(path(e,d,X)).
+:-solve(path(b,d,X)).
