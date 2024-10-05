@@ -1,5 +1,5 @@
 % Program: Finding the shortest path from one point to another
-% Author : group 2
+% Author : GROUP TWO - 2
 % Members:
 %   David Saah Abeiku
 %   Akwesi Ntim Duodu
@@ -19,7 +19,12 @@ edge(b,d,4).
 % T -> To
 % P -> path distance
 path(F,T,P) :- edge(F,T,P).
-path(F,T,P) :- edge(F,Z,A), edge(Z,T,B), P is A+B.
+path(F,T,P) :-
+  edge(F,Z,A),
+  edge(Z,Y,B),
+  edge(Y,T,C),
+  P is A+B+C.
+
 
 % :-solve(path(a,b,X)).
 % :-solve(path(b,c,X)).
