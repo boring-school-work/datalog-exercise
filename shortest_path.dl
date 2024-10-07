@@ -32,9 +32,49 @@ path(F,T,P) :-
 spath(F,T,P) :-
   min(path(F,T,C), C, P).
 
-% :-solve(path(a,b,X)).
-% :-solve(path(b,c,X)).
-% :-solve(path(c,e,X)).
-% :-solve(path(d,c,X)).
-% :-solve(path(e,d,X)).
-% :-solve(path(b,d,X)).
+% define messages to display
+msg(a, 'Shortest path from a to all other nodes').
+msg(b, 'Shortest path from b to all other nodes').
+msg(c, 'Shortest path from c to all other nodes').
+msg(d, 'Shortest path from d to all other nodes').
+msg(e, 'Shortest path from e to all other nodes').
+
+% find shortest path from a to all other nodes
+:-solve(msg(a,X)).
+:-solve(spath(a,a,X)).
+:-solve(spath(a,b,X)).
+:-solve(spath(a,c,X)).
+:-solve(spath(a,d,X)).
+:-solve(spath(a,e,X)).
+
+% find shortest path from b to all other nodes
+:-solve(msg(b,X)).
+:-solve(spath(b,a,X)).
+:-solve(spath(b,b,X)).
+:-solve(spath(b,c,X)).
+:-solve(spath(b,d,X)).
+:-solve(spath(b,e,X)).
+
+% find shortest path from c to all other nodes
+:-solve(msg(c,X)).
+:-solve(spath(c,a,X)).
+:-solve(spath(c,b,X)).
+:-solve(spath(c,c,X)).
+:-solve(spath(c,d,X)).
+:-solve(spath(c,e,X)).
+
+% find shortest path from c to all other nodes
+:-solve(msg(d,X)).
+:-solve(spath(d,a,X)).
+:-solve(spath(d,b,X)).
+:-solve(spath(d,c,X)).
+:-solve(spath(d,d,X)).
+:-solve(spath(d,e,X)).
+
+% find shortest path from c to all other nodes
+:-solve(msg(e,X)).
+:-solve(spath(e,a,X)).
+:-solve(spath(e,b,X)).
+:-solve(spath(e,c,X)).
+:-solve(spath(e,d,X)).
+:-solve(spath(e,e,X)).
