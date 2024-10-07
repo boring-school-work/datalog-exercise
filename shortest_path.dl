@@ -32,6 +32,7 @@ path(F,T,P) :-
 spath(F,T,P) :-
   min(path(F,T,C), C, P).
 
+% TESTS
 % define messages to display
 msg(a, 'Shortest path from a to all other nodes').
 msg(b, 'Shortest path from b to all other nodes').
